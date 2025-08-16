@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <main id="rootWrapper">
+        <!-- Title -->
+        <h1 id="title">Recipe <span>Book</span></h1>
+        <!-- Controls Wrapper -->
+        <div id="controlsWrapper">
+            <!-- Add recipe form toggle button -->
+            <button id="addRecipeBtn">Add Recipe</button>
+            <!-- Recipe Search Form -->
+            <form id="recipeSearchForm">
+                <input type="text" name="recipeSearchInput" id="recipeSearchInput" placeholder="Search Recipes...">
+                <!-- Search Button -->
+                <button type="submit" id="recipeSearchBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-search">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+        <!-- Add Recipe Form Wrapper -->
+        <div id="addRecipeWrapper" class="hideElement">
+            <!-- Title -->
+            <p id="addRecipeFormTitle">Add Recipe</p>
+            <!-- Add Recipe Form -->
+            <form id="addRecipeForm">
+                <!-- Recipe's Name -->
+                <div class="recipeFormInputWrapper">
+                    <label for="recipeName" class="recipeFormInputLabel">Recipe's Name*</label>
+                    <input type="text" name="recipeName" id="recipeName" class="recipeFormInput"
+                        placeholder="Fresh Salad" required>
+                </div>
+                <!-- Recipe's Ingredients -->
+                <div class="recipeFormInputWrapper">
+                    <label for="recipeIngredients" class="recipeFormInputLabel">Recipe's Ingredients*</label>
+                    <textarea name="recipeIngredients" id="recipeIngredients" class="recipeFormInput" rows="4"
+                        placeholder="1 x Cucumber" required></textarea>
+                </div>
+                <!-- Recipe's Preparation Steps -->
+                <div class="recipeFormInputWrapper">
+                    <label for="recipePreparationSteps" class="recipeFormInputLabel">Recipe's Preparation Steps*</label>
+                    <textarea name="recipePreparationSteps" class="recipeFormInput" id="recipePreparationSteps" rows="8"
+                        placeholder="Wash the cucumber with fresh water." required></textarea>
+                </div>
+                <!-- Recipe's Image -->
+                <div class="recipeFormInputWrapper">
+                    <label for="recipeImage" class="recipeFormInputLabel">Recipe's Image*</label>
+                    <input type="file" name="recipeImage" class="recipeFormInput" id="recipeImage"
+                        accept=".jpg, .jpeg, .png, .webp, .svg" required />
+                </div>
+                <!-- Recipe Form Buttons -->
+                <div class="recipeFormBtns">
+                    <button type="submit" id="btnAddForm" class="btnForm">Add</button>
+                    <button type="button" id="btnClearForm" class="btnForm">Clear</button>
+                </div>
+            </form>
+        </div>
+        <!-- Messages Wrapper -->
+        <div>
+            <p id="noSearchFound" class="hideElement">No recipe found!!!</p>
+            <p id="emptySearch" class="hideElement">Search field is empty!</p>
+        </div>
+        <!-- All Cards Wrapper -->
+        <div id="allCardsWrapper">
+            <!-- Title -->
+            <p id="allCardsTitle">All Recipes</p>
+            <p id="allCardsResultsTitle" class="hideElement">Results</p>
+            <!-- Card's Parent Wrapper -->
+            <div id="allCards"></div>
+        </div>
+        <!-- Recipe Modal Wrapper -->
+        <div id="recipeModalWrapper" class="hideElement">
+            <!-- Recipe Modal Content -->
+            <div id="recipeModalBody">
+                <!-- Recipe Modal Buttons -->
+                <span id="closeModalBtn">&times;</span>
+                <span id="deleteRecipeModalBtn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6l-1 14H6L5 6"></path>
+                        <path d="M10 11v6"></path>
+                        <path d="M14 11v6"></path>
+                    </svg>
+                </span>
+                <!-- Recipe Modal Title -->
+                <p id="recipeModalTitle"></p>
+                <!-- Recipe Modal Image -->
+                <img src="#" alt="recipeModalImg" id="recipeModalImg" />
+                <!-- Recipe Modal Ingredients Wrapper -->
+                <div id="recipeModalIngredientsWrapper">
+                    <p id="recipeModalIngredientsTitle">Ingredients</p>
+                    <p id="recipeModalIngredients"></p>
+                </div>
+                <!-- Recipe Modal Preparation Steps -->
+                <div id="recipeModalPreparationStepsWrapper">
+                    <p id="recipeModalPreparationStepsTitle">Preparation Steps</p>
+                    <p id="recipeModalPreparationSteps"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
